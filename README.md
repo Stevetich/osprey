@@ -1,3 +1,11 @@
+流程：
+1. 下载Osprey-7B: https://huggingface.co/sunshine-lwt/Osprey-7b/tree/main
+2. 下载Clip：https://huggingface.co/laion/CLIP-convnext_large_d_320.laion2B-s29B-b131K-ft-soup/blob/main/open_clip_pytorch_model.bin
+3. 修改stage3.sh里面的模型路径和数据路径--model_name_or_path --vision_tower --dataset_config
+4. 准备context数据集 http://host.robots.ox.ac.uk/pascal/VOC/voc2010/VOCtrainval_03-May-2010.tar
+5. 修改self_config.json里面的context数据集的img_prefix和ann_file的路径，ann_file是标注文件
+6. bash scripts/stage3.sh 训
+
 <p align="center" width="100%">
 <img src="assets/osprey.png"  width="90%">
 </p>

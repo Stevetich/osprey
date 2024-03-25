@@ -99,6 +99,9 @@ class TrainingArguments(transformers.TrainingArguments):
     lora_bias: str = "none"
     group_by_modality_length: bool = field(default=False)
 
+    dataloader_num_workers: int = 8
+    dataloader_prefetch_factor: int = 2
+
 
 def maybe_zero_3(param, ignore_status=False, name=None):
     from deepspeed import zero
