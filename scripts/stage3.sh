@@ -1,13 +1,12 @@
 #!/bin/bash
 export PYTHONPATH=`pwd`:$PYTHONPATH
 
-# --vision_tower laion2b_s29b_b131k_ft_soup.bin \
-deepspeed --include localhost:0 osprey/train/train_mem.py \
+deepspeed --include localhost:0,1,2,3 osprey/train/train_mem.py \
     --deepspeed ./scripts/zero2.json \
-    --model_name_or_path /remote-home/zhangjiacheng/workspace/mllm/model/Osprey-7b \
+    --model_name_or_path ./ckpt/Osprey-7b \
     --dataset_config ./osprey/configs/self_config.json \
     --version v1 \
-    --vision_tower /remote-home/zhangjiacheng/workspace/mllm/model/CLIP-convnext_large_d_320.laion2B-s29B-b131K-ft-soup/open_clip_pytorch_model.bin \
+    --vision_tower ./ckpt/open_clip_pytorch_model.bin \
     --mm_projector_type mlp2x_gelu \
     --mm_vision_select_layer -2 \
     --mm_use_im_start_end False \
@@ -15,7 +14,7 @@ deepspeed --include localhost:0 osprey/train/train_mem.py \
     --image_aspect_ratio pad \
     --group_by_modality_length True \
     --bf16 True \
-    --output_dir './exp/stage3' \
+    --output_dir './output_ckpt/stage3' \
     --num_train_epochs 2 \
     --per_device_train_batch_size 1\
     --per_device_eval_batch_size 4 \

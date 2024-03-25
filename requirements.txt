@@ -1,0 +1,11 @@
+transformers==4.32.0
+accelerate
+flash_attn
+ftfy
+tiktoken
+einops
+transformers_stream_generator
+scipy
+pillow
+tensorboard
+matplotlib

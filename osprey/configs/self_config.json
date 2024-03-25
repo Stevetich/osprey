@@ -1,7 +1,7 @@
 [
     {
         "type": "OspreyShortForm",
-        "ann_file": "/remote-home/zhangjiacheng/workspace/RVP/rvp/constructed_osprey.json",
-        "img_prefix": "/remote-home/zhangjiacheng/workspace/data/context/VOCdevkit/VOC2010/JPEGImages"
+        "ann_file": "./data/constructed_osprey.json",
+        "img_prefix": "./data/VOCdevkit/VOC2010/JPEGImages"
     }
 ]
