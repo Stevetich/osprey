@@ -3,7 +3,8 @@
 
 ```
 data
-├──VOCdevkit
+├── constructed_osprey.json
+├── VOCdevkit
 │   ├── VOC2010
 │   │   ├── JPEGImages
 │   │   ├── SegmentationClassContext
