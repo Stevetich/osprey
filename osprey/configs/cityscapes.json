@@ -1,0 +1,7 @@
+[
+    {
+        "type": "OspreyShortForm",
+        "ann_file": "./data/constructed_cityscapes.json",
+        "img_prefix": "./data/cityscapes/leftImg8bit/train"
+    }
+]

@@ -1,10 +1,11 @@
 #!/bin/bash
+# bash scripts/stage3.sh [--dataset_config]
 export PYTHONPATH=`pwd`:$PYTHONPATH
 
 deepspeed --include localhost:0,1,2,3 osprey/train/train_mem.py \
     --deepspeed ./scripts/zero2.json \
     --model_name_or_path ./ckpt/Osprey-7b \
-    --dataset_config ./osprey/configs/self_config.json \
+    --dataset_config $1 \
     --version v1 \
     --vision_tower ./ckpt/open_clip_pytorch_model.bin \
     --mm_projector_type mlp2x_gelu \
@@ -14,7 +15,7 @@ deepspeed --include localhost:0,1,2,3 osprey/train/train_mem.py \
     --image_aspect_ratio pad \
     --group_by_modality_length True \
     --bf16 True \
-    --output_dir './output_ckpt/stage3' \
+    --output_dir './output_ckpt/stage3_cityscapes' \
     --num_train_epochs 2 \
     --per_device_train_batch_size 1\
     --per_device_eval_batch_size 4 \
