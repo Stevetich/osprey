@@ -62,6 +62,9 @@ pip install cityscapesscripts
 **Step 3.** Convert cityscapes by (In project directory):
 ```
 python convert_cityscapes.py ./data/cityscapes --nproc 8
+
+# If you can not install openmim, directly run this bash file.
+# !!! Before you run, copy the ./data/cityscapes/leftImg8bit/train directory first
 bash convert.sh ./data/cityscapes/leftImg8bit/train
 ```
 
