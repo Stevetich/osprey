@@ -72,3 +72,22 @@ bash convert.sh ./data/cityscapes/leftImg8bit/train
 ```
 bash scripts/stage3.sh ./osprey/configs/cityscapes.json
 ```
+
+#### VOC
+**Step 1.** Download the VOC dataset. VOC used VOC2012 Dataset (Context used VOC2010). The dataset can be downloaded [here](http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2012.tar). And the dataset should be arranged like that:
+
+```
+data
+├── constructed_osprey.json
+├── VOCdevkit
+│   ├── VOC2012
+│   │   ├── JPEGImages
+│   │   ├── SegmentationClassContext
+│   │   ├── ImageSets
+│   │   │   ├── SegmentationContext
+│   │   │   │   ├── train.txt
+│   │   │   │   ├── val.txt
+│   │   ├── trainval_merged.json
+```
+
+
