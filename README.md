@@ -90,4 +90,29 @@ data
 │   │   ├── trainval_merged.json
 ```
 
+### Evaluation steps
+**Stpe 3.** Put the eval file under the project dir, and change into the eval file.
+```
+osprey
+├── eval
+├── osprey
+├── ckpt
+...
+```
+
+**Step 2.** Initialize the eval file by adding soft links of `data` and `ckpt`, then generate and save incomplete masks.
+```
+mkdir log
+bash init.sh
+```
+
+**Step 3.** Run eval file
+```
+# This is the normal eval, support: voc, context, ade20k, cityscapes, cocostuff.
+bash multigpu.sh context osprey ./ckpt/Osprey-7b # bash multigpu.sh [dataset] [model name] [ckpt path]
+
+# This is the no background eval, support: voc, context.
+bash multigpu_nobg.sh context osprey ./ckpt/Osprey-7b # bash multigpu.sh [dataset] [model name] [ckpt path]
+```
+
 
