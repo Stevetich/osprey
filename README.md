@@ -91,7 +91,7 @@ data
 ```
 
 ### Evaluation steps
-**Stpe 3.** Put the eval file under the project dir, and change into the eval file.
+**Stpe 3.** Put the eval file under the project dir, and change into the eval file by `cd eval`.
 ```
 osprey
 ├── eval
@@ -102,7 +102,8 @@ osprey
 
 **Step 2.** Initialize the eval file by adding soft links of `data` and `ckpt`, then generate and save incomplete masks.
 ```
-mkdir log
+ln -s ../ckpt .
+ln -s ../data .
 bash init.sh
 ```
 
