@@ -107,7 +107,16 @@ ln -s ../data .
 bash init.sh
 ```
 
-**Step 3.** Run eval file
+**Step 3.** Put the `mmsegmentation` dir in the eval dir, and install mmsegmentation.
+```
+cd mmsegmentation
+pip install -U openmim
+mim install mmengine
+mim install "mmcv>=2.0.0"
+pip install -v -e .
+```
+
+**Step 4.** Run eval file
 ```
 # This is the normal eval, support: voc, context, ade20k, cityscapes, cocostuff.
 bash singlegpu.sh context osprey ./ckpt/Osprey-7b # bash multigpu.sh [dataset] [model name] [ckpt path]
