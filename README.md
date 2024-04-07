@@ -109,10 +109,10 @@ bash init.sh
 **Step 3.** Run eval file
 ```
 # This is the normal eval, support: voc, context, ade20k, cityscapes, cocostuff.
-bash multigpu.sh context osprey ./ckpt/Osprey-7b # bash multigpu.sh [dataset] [model name] [ckpt path]
+bash singlegpu.sh context osprey ./ckpt/Osprey-7b # bash multigpu.sh [dataset] [model name] [ckpt path]
 
 # This is the no background eval, support: voc, context.
-bash multigpu_nobg.sh context osprey ./ckpt/Osprey-7b # bash multigpu.sh [dataset] [model name] [ckpt path]
+bash singlegpu_nobg.sh context osprey ./ckpt/Osprey-7b # bash multigpu.sh [dataset] [model name] [ckpt path]
 ```
 
 
